@@ -1,0 +1,107 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>充点_畅易阁--官方线下交易平台</title>
+		<meta name="Description" content="畅易阁资金管理中心提供网银、手机支付、支付宝、易宝等第三方支付，充值提现安全方便。">
+		<meta name="Keywords" content="资金管理  线下交易  畅易阁">
+	    <link rel="stylesheet" type="text/css" href="./css/cyg/pay.main.css" media="screen">
+	    <link rel="stylesheet" type="text/css" href="./css/cyg/pay.chong.css" media="screen">
+	</head>
+	<body>
+		<form action="/cyg/confirmCardOrders.do" method="post" id="thisform">
+		<input type="hidden" name="cardOrders.gameType" id="gameType" value="3" >
+		<input type="hidden" name="psCode" id="psCode" value="dy" >
+		<input type="hidden" name="whom" id="whom" value="" >
+		<input type="hidden" name="gameType" id="gameType" value="3" >
+		<input type="hidden" name="currentDiscount.discountRule" id="discountRule" value="100" >
+		<input type="hidden" name="tbank" id="tbank" value="" >
+		<input type="hidden" name="cardOrders.repeatcn" value="409211491@changyou.com" />
+		<input type="radio" name="cardOrders.chnl" class="radio_b" value="143" checked="checked" style="display:none"/>
+		<input type="hidden" tabindex="2" class="input" name="cardOrders.cardCount" id="gameCardCount" onblur="checkPoints()" value="0" >
+		<input type="hidden" name="cn" value="409211491@changyou.com" />
+		<div class="pg-wrapper">
+			<div class="pg-body-content">
+				<div class="ui-progress-bar process1">
+					<ul>
+						<li class="step1">
+							1 填写充值信息
+						</li>
+						<li class="step2">
+							2 确认订单
+						</li>
+						<li class="step3">
+							3 充值成功
+						</li>
+					</ul>
+				</div>
+				<div class="form-box-wrapper">
+						<div class="form-box">
+							<div class="ui-control-group">
+								<label class="control-label"> 充值产品： </label>
+								<div class="controls">
+									
+									
+										<b>天龙八部/新天龙八部 游戏点数</b>
+									
+									
+								</div>
+							</div>
+							<div class="ui-control-group">
+								<label class="control-label"> 充值通行证： </label>
+								<div class="controls">
+									<input class="ui-chong-input" type="text" readOnly="true" name="cardOrders.cn" value="409211491@changyou.com" />
+								</div>
+							</div>
+							<div class="ui-control-group">
+								<label class="control-label"> 充值金额： </label>
+								<div class="controls">
+								<input class="ui-chong-input ui-value-input" id="chongValue" type="text" maxlength="5" autocomplete="off"/>
+								<a class="verify-btn-normal" id="chongAll" href="javascript:;">钱包全额直充</a>
+								<span class="ui-charge-link">1元=20游戏点</span>
+								<p>
+									<span class="error-tip" id="inputError"></span>
+								</p>
+								</div>
+							</div>
+							<div class="ui-control-group" id="showPoint">
+								<label class="control-label"> 游戏点数： </label>
+								<div class="controls">
+									<span class="ui-money-num-s" id="realPoint">0</span>游戏点<span id="saveMoney"></span>
+								</div>
+							</div>
+							<div class="ui-control-group">
+								<label class="control-label"> 验证码： </label>
+								<div class="controls">
+									<input id="annexCode" type="text" tabindex="3" class="ui-chong-input ui-value-input" name="cardOrders.annexCode"
+          	        					 maxlength="7" disableautocomplete="" autocomplete="off" value=""/>
+<img id="imageCodeId" height="28" width="105" src="http://auth.changyou.com/servlet/ImageCode" class="code" onclick="javascript:reloadImageCode4En();" style="cursor:pointer">
+            						<a class="ui-charge-link" href="javascript:reloadImageCode4En();">刷新验证码</a>
+									<p class="other">
+									<span class="error-tip" id="annexCodeMsg"></span>
+									</p>
+								</div>
+								
+							</div>
+							 
+							<div class="ui-control-group">
+								<div class="controls">
+									<span class="error-tip" id="submitError"></span>
+								</div>
+								<div class="controls">
+									<a href="javascript:" id="chongBtn" onclick="return false;" class="ui-btn-large">下一步</a>
+								</div>
+							</div>
+						</div>
+				</div>
+		</div>
+    </div>
+    </form>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/validate.js"></script> 
+    <script type="text/javascript" src="./js/chong.js"></script> 
+</body>
+</html>
