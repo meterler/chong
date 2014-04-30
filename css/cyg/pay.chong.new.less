@@ -1,0 +1,256 @@
+@charset "utf-8";
+.pg-body-content {
+	background: #FFF;
+	padding: 0px;
+	min-height: 700px;
+	height: auto;
+	_height: 700px;
+}
+.ui-chong-input{
+	width: 250px;
+	height: 20px;
+	font-size: 14px;
+	border: 1px solid #999;
+	padding: 5px 4px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+.ui-chong-input:disabled{
+	background: #f9f9f9;
+	border-color: #CFCFCF;
+	color:#999;
+}
+.ui-value-input{
+	width: 90px;
+}
+.ui-charge-link{
+	color: #0a8cd2;
+	margin-left: 6px;
+	font-size: 12px;
+	font-weight: normal;
+}
+#imageCodeId{
+	height: 32px;
+}
+#chongAll{
+	vertical-align: middle;
+	margin-right: 0;
+}
+#imageCodeId{
+	vertical-align:middle
+}
+.result-block{
+	padding-left: 80px;
+	margin-top: 40px;
+	.result-title {
+		font-size: 16px;
+		margin-left: 10px;
+		.result-icon {
+			float: left;
+			width: 40px;
+			height: 40px;
+			background: url("../img/icon-result.0b889096.png") 0 -50px no-repeat;
+		}
+		&.error .result-icon {
+			background-position: 0 -150px;
+		}
+		&.waiting .result-icon {
+			background-position: 0 -400px;
+		}
+	}
+	.result-text-info{
+		line-height: 2;
+		margin-left: 50px;
+		padding-top: 5px;
+		font-weight: bold;
+		color: #333;
+		font-size: 16px;
+	}
+	.result-content-chong {
+		padding: 10px 40px 10px 60px;
+		font-size: 12px;
+		color: #333;
+	}
+	.result-notes-chong{
+		padding: 20px 40px 0px 20px;
+		font-size: 12px;
+		width: 520px;
+		color: #4d4d4d;
+		.notes{
+			color: #999;
+			margin-bottom: 20px;
+		}
+		.verify-btn-link, .verify-btn-normal {
+			vertical-align: middle;
+		}
+	}
+	.ui-warning-color{
+		color:#BE0202;
+	}
+	&.result-waiting{
+		margin-left: 120px;
+		.result-notes-chong{
+			width: 260px;
+			text-align: center;
+		}
+	}
+}
+/**
+ * @name 游戏选择
+ * @auther zhou shufeng
+ */
+.game-list-box {
+	width: 712px;
+	margin-left: 20px;
+	.game-list-title {
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 40px;
+		line-height: 40px;
+		background-color: #E7EEF9;
+		border: 1px solid #E2E2E2;
+		h2 {
+			padding-left: 20px;
+			color: #333;
+			font-weight: normal;
+			text-shadow: 0 0 1px #9ea3aa;
+			font-size: 16px;
+			font-family: "Microsoft Yahei";
+		}
+		.buyCoin {
+			font-size: 14px;
+			font-weight: bold;
+			margin-right: 18px;
+		}
+	}
+	.game-list-cont {
+		border-left: 1px solid #E2E2E2;
+		.game-item {
+			width: 236px;
+			height: 100px;
+			float: left;
+			border-bottom: 1px solid #E2E2E2;
+			border-right: 1px solid #E2E2E2;
+			display: inline;
+			background-color: #FFF;
+			.game-icon {
+				display: block;
+				height: 70px;
+				background: url("http://a2.cyoupic.com/pay/img/cyg/game-list.png") 0 0 no-repeat;
+				&.game-xtlbb {
+					background-position: 0 0;
+				}
+				&.game-tlbb {
+					background-position: -240px 0;
+				}
+				&.game-ayzj {
+					background-position: -472px 0;
+				}
+				&.game-dpcq {
+					background-position: 0 -100px;
+				}
+				&.game-xsh {
+					background-position: -240px -100px;
+				}
+				&.game-ty {
+					background-position: -472px -100px;
+				}
+				&.game-ldj {
+					background-position: 0 -200px;
+				}
+				&.game-jdcs {
+					background-position: -240px -200px;
+				}
+				&.game-gy {
+					background-position: -472px -200px;
+				}
+				&.game-zhyx {
+					background-position: 0 -300px;
+				}
+				&.game-zhyx-lhm {
+					background-position: -240px -300px;
+				}
+			}
+			.game-name {
+				display: block;
+				color: #333;
+				margin-top: 3px;
+				font-size: 14px;
+				text-align: center;
+			}
+			&.placeholder {
+				background: #FFF url("http://a2.cyoupic.com/pay/img/cyg/game-list.png") -472px -300px no-repeat;
+				cursor: default;
+				&:hover {
+					background-color: #FFF;
+				}
+			}
+			&:hover {
+				text-decoration: none;
+				background-color: #F3F3F3;
+				.game-name {
+					color: #0A8CD2;
+				}
+			}
+		}
+	}
+}
+
+/*bottom,为了不修改平台现有的html代码，所以单独写的按钮样式，且长度是固定的*/
+//普通按钮
+.ui-btn-large{
+	height: 31px;
+	line-height: 31px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	outline: 0;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	background: url("../img/btn-m.affc4bff.png") 0 0 repeat;
+	width: 100px;
+	border-radius: 2px;
+	font-weight: bold;
+	&:hover {
+		background-position: 0 -40px;
+		text-decoration: none
+	}
+}
+.verify-btn-link{
+	height: 31px;
+	line-height: 31px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	outline: 0;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	background: url("../img/btn-m.affc4bff.png") 0 -160px repeat;
+	width: 100px;
+	border-radius: 2px;
+	font-weight: bold;
+	&:hover {
+		background-position: 0 -200px;
+		text-decoration: none
+	}
+}
+.verify-btn-normal{
+	margin: 0 10px;
+}
+#chongAll{
+	.verify-btn-link();
+	margin-left: 0;
+}

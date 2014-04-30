@@ -1,40 +1,22 @@
 $(function(){
-	// $("#otherValue").val("");
+	var message = $('#message').val();
+	if(null != message && "" != message){
+		$("#annexCodeMsg").show().parent().show();
+	}
 	var psCode = $("#psCode").val();
 	var defautPoint;
 	var defautMoney;
 	var gameCardCount;
-	var index;
-	var beishu;
-	if("0" == psCode){
-		// $("#gameCardCount").val(10000);
-		// defautPoint = 10000;
-		// defautMoney = 100;
-		index = 0;
-		beishu = 100; 
-	} else if ("DL" == psCode) {
-		// $("#gameCardCount").val(1000);
-		// defautPoint = 1000; 
-		// defautMoney = 100;
-		index = 2;
-		beishu = 10;
-	} else {
-		// $("#gameCardCount").val(2000);
-		// defautPoint = 2000;
-		// defautMoney = 100;
-		index = 1;
-		beishu = 20;
-	}
-	/*gameCardCount = $("#gameCardCount").val();
-	showPoint(defautMoney,index);    */
+	var beishu = $("#beishu").val();
 	//获取全部余额
 	var search = window.location.search;
 	var balance = /[&|?]balance=([\d]*)[&]*/.exec(search);
 	balance = (balance && balance[1] && Math.floor(balance[1])) || 0;
-	if(balance > 10000){
-		balance = 10000;
+	if(balance > 100000){
+		balance = 100000;
 	}
 	$("#chongAll").click(function(){
+//		$("#messageError").hide();
 		$("#chongValue").val(balance);
 		$("#chongValue").trigger("keyup");
 		return false;
@@ -48,7 +30,7 @@ $(function(){
 		var num = this.value;
 		var flag = checkMoney(num);
 		if(flag){
-			showPoint(num,index); 
+			showPoint(num); 
 			$("#showPoint").show();
 		} else {
 			$("#showPoint").hide();
@@ -62,14 +44,14 @@ $(function(){
 		if(!num){showPointError(2,beforeSubmit,beishu);return false;}
 		if(!Number(num)){showPointError(3,beforeSubmit,beishu);return false;}
 		if((num+"").indexOf(".")!==-1){showPointError(4,beforeSubmit,beishu);return false;}
-		if(num > 10000 || num < 1){showPointError(5,beforeSubmit,beishu);return false;}
+		if(num > 100000 || num < 1){showPointError(5,beforeSubmit,beishu);return false;}
 		hidePointError();
 		return true;
 	}
 	function hidePointError(){
 		$("#inputError").hide();
 		$("#submitError").hide();
-		$("#annexCodeMsg").hide();
+		$("#annexCodeMsg").hide().parent().hide();
 	}
 	function showPointError(type,beforeSubmit,beishu){
 		var error;
@@ -79,19 +61,19 @@ $(function(){
 				error="咦？您还未输入充值金额";
 				break;
 			case 1:
-				error="呦！充值金额需要是1-10000的整数哦";
+				error="呦！充值金额需要是1-100000的整数哦";
 				break;
 			case 2:
-				error="呦！充值金额需要是1-10000的整数哦";
+				error="呦！充值金额需要是1-100000的整数哦";
 				break;
 			case 3:
-				error="呦！充值金额需要是1-10000的整数哦";
+				error="呦！充值金额需要是1-100000的整数哦";
 				break;
 			case 4:
-				error="呦！充值金额需要是1-10000的整数哦";
+				error="呦！充值金额需要是1-100000的整数哦";
 				break;
 			case 5:
-				error="呦！充值金额需要是1-10000的整数哦";
+				error="呦！充值金额需要是1-100000的整数哦";
 				break;
 		}
 		$("#inputError").html(error).show();
@@ -113,6 +95,7 @@ $(function(){
 	});
 	
 	$("#chongValue").blur(function(){
+//		$("#messageError").hide();
 		checkMoney($(this).val());
 	});
 	$("#chongValue").change(function(){
@@ -122,23 +105,24 @@ $(function(){
 	$("#annexCode").focus(function(e){
 		hidePointError();
 	}).blur(function(){
+//		$("#messageError").hide();
 		checkAnnexCodeCYG();
 	});
 	
 	function checkAnnexCodeCYG(){
-		$("#annexCodeMsg").hide();
+		$("#annexCodeMsg").hide().parent().hide();
 		var annexCode = $.trim($('#annexCode').val());
 		var error = "";
 	    if(annexCode == null || '' == annexCode){
 	    	error="咦？您还没有输入验证码哦";
-	    	$("#annexCodeMsg").html(error).show();
+	    	$("#annexCodeMsg").html(error).show().parent().show();
 	    	return false;
 	    }
-	    $("#annexCodeMsg").html(error).show();
+//	    $("#annexCodeMsg").html(error).show().parent().show();
 	    return true; 
 	}
 
-	function showPoint(money, index) {
+	function showPoint(money) {
 		var realMoney = money;
 		var realPoint;
 		var discountRule = parseInt($("#discountRule").val()) / 100;
@@ -148,8 +132,6 @@ $(function(){
 		$("#realPoint").text(value);
 	}
 });
-
-
 
 
 
